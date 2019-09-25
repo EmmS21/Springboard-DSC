@@ -18,7 +18,7 @@ class wrapper(luigi.WrapperTask):
         def requires(self):
                 file = pd.read_csv('/Users/emmanuels/Desktop/Attribution/finalfullcleanattribution.csv')
                 actions = file.state.unique()
-                task_list = []
+                task_list = [] #move task list, create task list in initial class
                 for current_task in actions:
                         task_list.append(data_filter(task=current_task))
                 return task_list
@@ -33,7 +33,9 @@ if __name__ == '__main__':
 
 
 
-
+#not supposed to have wrapper
+#wrapper goes one level higher - on top of the state machine
+# wrapper is what we will call
 
 
 
